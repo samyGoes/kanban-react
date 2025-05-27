@@ -1,31 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import "./taskList.css";
+import TaskItem from "../TaskItem/TaskItem";
 
-
-export default function TaskList({titulo})
+export default function TaskList({titulo, onAddTask, tasks})
 {
-    const [count, setCount] = useState(0);
-
-    function aumentar()
+    function addTask()
     {
-        setCount((currentCount) => {
-            return currentCount + 1;
-        });
+        console.log("ADD task no TaskList");
+        onAddTask("Nova tarefa", "A fazer");
     }
 
     return(
         <div className="task-list"> 
             <span>{titulo}</span>
+
             <div className="content">
-                {count}
-                <button onClick={aumentar}>aumenta</button>
+                {tasks?.map((task) => {
+                    return <TaskItem key={task.id} id={task.id} titulo={task.titulo} status={task.status} />
+                })}
             </div>
+
+            <button id="btn-nova-tarefa" onClick={addTask}> nova tarefa </button>
         </div>
     );
 }
 
 TaskList.proptypes = {
     titulo: PropTypes.string.isRequired,
+    onAddTask: PropTypes.func.isRequired,
+    tasks: PropTypes.array.isRequired
 }

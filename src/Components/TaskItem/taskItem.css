@@ -1,0 +1,17 @@
+.task
+{
+    width: 100%;
+    /* background-color: #c6c1db; */
+    border: 1px solid ;
+    padding: .3rem;
+    padding-left: .5rem;
+    font-size: 14px;
+}
+
+.task-input
+{
+    border: 1px dashed #b567bf;
+    outline: none;
+    padding: .3rem;
+    color: #5f2068;
+}
