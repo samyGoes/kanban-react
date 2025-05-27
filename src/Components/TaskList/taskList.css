@@ -1,0 +1,17 @@
+.task-list
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    background-color: #e6cfe9;
+    padding: .3rem;
+    border-radius: 5px;
+}
+
+.task-list span 
+{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #453d4b;
+}
