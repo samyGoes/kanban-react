@@ -24,18 +24,39 @@ export default function TaskItem({id, titulo, status})
     if(editando)
     {
         return (
-            <input 
-            className="task-input" 
-            type="text" 
-            value={tituloEditavel} 
-            placeholder="Digite o nome da tarefa..." 
-            onChange={onChangeTitulo} 
-            onKeyDown={onKeyDownEnter} />
+            <div className="task" onClick={(e) => setEditando(true)}>
+                <div className="retangulo"></div>
+
+                <div className="conteudo-task">
+                    <input 
+                        className="task-input" 
+                        type="text" 
+                        value={tituloEditavel} 
+                        placeholder="Digite o nome da tarefa..." 
+                        onChange={onChangeTitulo} 
+                        onKeyDown={onKeyDownEnter} />
+                        
+                    <div className="data">
+                        <p>09-12-25</p>
+                    </div>
+                </div>         
+            </div>
         );
     }
     else
     {
-        return <div className="task" onClick={(e) => setEditando(true)}>{tituloEditavel}</div>
+        return ( 
+            <div className="task" onClick={(e) => setEditando(true)}>
+                <div className="retangulo"></div>
+
+                <div className="conteudo-task">
+                    <h3 contenteditable="true"> {tituloEditavel} </h3>
+                    <div className="data">
+                        <p>09-12-25</p>
+                    </div>
+                </div>         
+            </div>
+        );
     }
 }
 

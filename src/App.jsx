@@ -32,11 +32,13 @@ export default function App() {
     <>
       <NavBar />
 
-      <div className="quadro">
-        <TaskList titulo="A Fazer" />
-        <TaskList titulo="Fazendo" onAddTask={addTask} tasks={tasks} />
-        <TaskList titulo="Feito" />
-      </div>   
+      <main>
+        <div className="quadro">
+          <TaskList titulo="A fazer" taskStatus={"#D9D9D9"} />
+          <TaskList titulo="Fazendo" taskStatus={"#FFE98F"} onAddTask={addTask} tasks={tasks} />
+          <TaskList titulo="Feito" taskStatus={"#9AFF94"} borderRight={"none"} />
+        </div>   
+      </main>
     </>
   )
 }
